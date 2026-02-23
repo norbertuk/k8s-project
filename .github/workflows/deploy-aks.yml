@@ -23,12 +23,7 @@ jobs:
           } else {
               Write-Host "Azure CLI not found. Installing silently..."
 
-              # Download MSI installer
-              $installer = "$env:TEMP\AzureCLI.msi"
-              Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile $installer
-
-              # Silent install
-              Start-Process msiexec.exe -ArgumentList "/i `"$installer`" /quiet /qn /norestart" -Wait
+              winget install --accept-source-agreements --exact --id Microsoft.AzureCLI
 
               # Verify installation
               if (Get-Command az -ErrorAction SilentlyContinue) {
