@@ -1,0 +1,12 @@
+
+project_name        = "todoapi"
+location            = "uksouth"
+env                 = "dev"
+aks_node_count      = 2
+aks_node_vm_size    = "Standard_DS2_v2"
+vnet_address_space  = ["10.20.0.0/16"]
+subnet_aks_cidr     = "10.20.1.0/24"
+tags = {
+  owner = "norbert.soltesz"
+  cost_center = "engineering"
+}
